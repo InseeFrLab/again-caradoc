@@ -1,0 +1,33 @@
+# ----------------
+# Environment files
+# ----------------
+# Ignore service env files
+**/*.env*
+!**/.env.example*
+
+# ----------------
+# OS / editor junk
+# ----------------
+.idea/
+
+# --------------------
+# keys and credentials
+# --------------------
+**/*.pem
+**/*.key
+
+# --------------
+# HTTP test files
+# --------------
+**/*.http
+# ----------------
+# Python artifacts
+# ----------------
+__pycache__/
+*.py[cod]
+.venv/
+
+# ----------------
+# IDE module files
+# ----------------
+*.iml
