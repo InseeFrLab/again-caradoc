@@ -31,3 +31,8 @@ __pycache__/
 # IDE module files
 # ----------------
 *.iml
+
+# ------------
+# Specific files
+# ------------
+docs/Workflows and activities.md
