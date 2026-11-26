@@ -7,7 +7,7 @@ body `ErrorResponse`: `{error_code, message, request_id, details?}`.
 
 ## Two levels of error classes
 
-- **Families** live in `common_core.exceptions`, one per HTTP status: `AuthenticationError` (401),
+- **Families** live in `caradoc_core.exceptions`, one per HTTP status: `AuthenticationError` (401),
   `AuthorizationError` (403), `ResourceNotFoundError` (404), `InvalidInputError` (422), ... Each sets `status_code`, a
   generic `error_code` and a default `message`.
 - **Conditions** subclass a family and set their own `error_code` and `message`. They live in the `exceptions` module

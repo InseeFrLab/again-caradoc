@@ -25,7 +25,7 @@ The scope names the part of the codebase a changelog reader would recognize, in 
 component (service, worker, library, frontend app) named after its directory; a narrower area such as a
 workflow when that reads better.
 
-Examples: components `common-core`, `chat-service`, `web`; a workflow `document-ingestion`; repo-level
+Examples: components `caradoc-core`, `chat-service`, `web`; a workflow `document-ingestion`; repo-level
 `infra`, `deps`, `release`.
 
 - One scope per commit. It names where the capability now lives, not every directory touched: a library
@@ -35,7 +35,7 @@ Examples: components `common-core`, `chat-service`, `web`; a workflow `document-
 - A feature spanning components (an endpoint and the screen using it) is one change, scoped to where the
   user sees it. Split only when each part is useful on its own.
 - A change that touches the whole project takes no scope: `feat: unify the error envelope`.
-- Never list two scopes like `(common-core,chat-service)`: the changelog tool reads it as one new
+- Never list two scopes like `(caradoc-core,chat-service)`: the changelog tool reads it as one new
   component name and gives it its own heading.
 
 ## Branches and merging
@@ -47,7 +47,7 @@ Examples: components `common-core`, `chat-service`, `web`; a workflow `document-
 ## Breaking changes
 
 - Mark with `!` after the scope plus a `BREAKING CHANGE:` footer stating the migration:
-  `feat(common-core)!: replace AppError context kwargs`.
+  `feat(caradoc-core)!: replace AppError context kwargs`.
 - Mark it when the change forces action outside this repo, or changes behaviour silently: a renamed
   `error_code`, a changed response shape, a renamed environment variable, different transaction semantics.
 - Moving a module or renaming a parameter is not breaking. It fails loudly at import and the dependents are
