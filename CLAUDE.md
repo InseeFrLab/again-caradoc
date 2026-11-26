@@ -106,3 +106,7 @@ which part: `delete_superseded_version_artifacts`.
 ## Known traps
 
 Add an entry here every time we lose time on something.
+
+- Always sync with `uv sync --all-packages`, never a plain `uv sync`. A plain `uv sync` installs only what the root
+  project needs, so it removes from `.venv` what only the members need. The FastAPI skill link, which points into
+  `.venv`, then leads nowhere.

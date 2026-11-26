@@ -9,14 +9,17 @@ Run every command from the repo root.
 - Source: https://fastapi.tiangolo.com/ai-development/#install-without-prompts
 - Gives: the `fastapi` skill for Claude Code. It ships inside the `fastapi` package, so it matches the installed
   version.
-- Needs: FastAPI installed in the project (`uv sync`), because the command looks for the skill in `.venv`.
+- Needs: a workspace member that uses FastAPI, because the last command looks for the skill in `.venv`. Here the
+  member is `control-api`.
 
 ```bash
+uv add --package control-api "fastapi[standard-no-fastapi-cloud-cli]"
+uv sync --all-packages
 uvx library-skills install --skill fastapi --yes --claude
 ```
 
-- Then: restart Claude Code.
-- Writes: a link in `.claude/skills/`. Commit it.
+- Then: delete `.agents/`, which the last command also writes for other coding tools.
+- Writes: `uv.lock`, the root `.venv/`, and a link in `.claude/skills/`. Commit `uv.lock` and the link.
 
 ### Temporal coding assistance
 
