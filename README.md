@@ -1,2 +1,2 @@
 # again-caradoc
-Open source entrerprise RAG project
+Open source enterprise RAG project
