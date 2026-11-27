@@ -9,3 +9,55 @@ members = [
     "backend/libs/caradoc-core",
     "backend/services/control-api",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.6",
+    "ty>=0.0.112",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# Ruff's default rules stay on. These groups are added to them.
+extend-select = [
+    "ANN", # flake8-annotations: type annotations on functions
+    "ASYNC", # flake8-async: blocking calls and other mistakes in async code
+    "B", # flake8-bugbear: likely bugs and design problems
+    "D", # pydocstyle: docstring format
+    "DTZ", # flake8-datetimez: dates and times without a timezone
+    "E", # pycodestyle: style errors from PEP 8
+    "F", # pyflakes: errors such as unused imports and undefined names
+    "FAST", # FastAPI: misuse of FastAPI routes and dependencies
+    "ISC", # flake8-implicit-str-concat: string literals glued together
+    "PLC", # pylint conventions: imports inside functions, non-ASCII names
+    "S", # flake8-bandit: security
+    "T20", # flake8-print: print calls
+    "TID", # flake8-tidy-imports: relative and banned imports
+]
+ignore = [
+    "D1", # a docstring is not required everywhere
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.flake8-implicit-str-concat]
+allow-multiline = false
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ty.rules]
+dynamic-function-decorator-return = "error"
+missing-type-argument = "error"
+possibly-unresolved-reference = "warn"
+unsound-return = "error"
+
+[tool.ty.terminal]
+error-on-warning = true

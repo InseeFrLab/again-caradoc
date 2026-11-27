@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-lint
+        name: ruff lint
+        entry: uv run ruff check --fix
+        language: unsupported
+        types: [ python ]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: unsupported
+        types_or: [ python, pyi, markdown ]
+      - id: ty
+        name: ty type check
+        entry: uv run --all-packages ty check
+        language: unsupported
+        types: [ python ]
+        pass_filenames: false

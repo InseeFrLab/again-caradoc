@@ -36,3 +36,15 @@ claude mcp add --scope project --transport http temporal-docs https://temporal.m
 
 - Then: restart Claude Code, run `/mcp` and log in to `temporal-docs` with a Google or GitHub account.
 - Writes: `.claude/settings.json` and `.mcp.json`. Commit them.
+
+### Git hooks
+
+- Source: https://pre-commit.com/#3-install-the-git-hook-scripts
+- Gives: ruff and ty run on every commit, as set in `.pre-commit-config.yaml`.
+- Needs: the dev tools installed (`uv sync --all-packages`).
+
+```bash
+uv run pre-commit install
+```
+
+- Writes: `.git/hooks/pre-commit`. Git does not version that file, so each clone runs the command once.
